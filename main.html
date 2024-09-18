@@ -47,7 +47,7 @@
     function deposit(){
     let rs=amount.value
     let pAsword=pwd.value
-   if(rs==""||pAsword=="" ){p1.innerHTML="Fill Fields"}
+   if(rs==""||pAsword=="" ){p1.innerHTML="Fill the Fields"}
    else{ 
     let pAsword=pwd.value
     let Username=localStorage.getItem("username")
@@ -68,10 +68,14 @@
     
     function Withdraw(){
       
-      
+      let   Rs = amount1.value 
     let pAsword = pwd1.value
     let Username=localStorage.getItem("username")
     let User= JSON.parse(localStorage.getItem(Username))
+    if(pAsword =="" ||Rs==""){
+      p2.innerHTML="Fill the Fields"
+    }
+    else{
      if(pAsword === User.Password){ 
         let   Rs = amount1.value
         let User= JSON.parse(localStorage.getItem(Username))
@@ -87,6 +91,7 @@
     }
     else{  p2.innerHTML="Incorrect password "  }
     }
+  }
     function logout(){
         localStorage.removeItem("password")
         
